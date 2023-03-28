@@ -133,201 +133,161 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: rgba(238, 195, 155, 0.568);
-        font-family: 'Architects Daughter', cursive;
+        font-family: 'iranyekan';
     }
-    /*-----------------------------------------------container------------------------------------------------------*/
+
+    :root{
+        --bodyColor : #fffcf9;
+        --parimryColor: #f48945;
+        --secondaryColor : #f4d367;
+        --checkColor: #7fcfa4;
+        --infoColor:#6c90ed;
+        --dangerColor:#e14a4a;
+        --lightGray :#dcdbdb;
+        --naturalWhite: #fff;
+
+    }
+    /*-----------------------------------------------main------------------------------------------------------*/
     
+    main {
+        width: 100vw;
+        height: 100vh;
+        display : flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /*-----------------------container-----------------------------*/
+
     .container {
+         margin: 20px;
+         width: 20rem;
+         height: auto;
+         background-color: var(--bodyColor);
+         text-align: center;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         padding: 10px;
+         border: 2px solid var(--parimryColor);
+         border-radius: 10px;
+    }
+
+    .container h1{
+        color: var(--parimryColor);
+        margin-bottom: 5px;
+    }
+
+    /*--------------------------form container-----------------------*/
+
+    .todo_inputs {
         display: flex;
-        width: 35%;
-        height: 90vh;
-        background-color: #ffffff;
-        flex-flow: column;
+        justify-content: space-between;
         align-items: center;
+        width: 95%;
+        height: 2rem;
+        margin-bottom: 5px;
+        padding: 0 5px;
+        border: 1px solid var(--secondaryColor);
         border-radius: 5px;
-        margin-top: 3%;
+        background-color: var(--naturalWhite);
     }
-    
-    h1 {
-        font-size: 1.5rem;
-        align-self: center;
-        margin: 10px;
-        font-family: Helvetica, sans-serif;
-        color: rgb(37, 37, 83);
-        margin: 10px;
-        border: 2px solid rgb(37, 37, 83);
-        border-radius: 10px;
-        padding: 5px;
-        font-family: 'Architects Daughter', cursive;
-        width: 40%;
-        text-align: center;
-    }
-    /*---------------------------------------------add-element----------------------------------------------------*/
-    
-    .add-element {
-        width: 90%;
-        height: 30px;
-        background-color: #25b1f7;
-        justify-content: space-around;
-        align-items: center;
-        display: flex;
-        border-radius: 5px;
-        margin-bottom: 10px;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    }
-    
-    #todo {
-        width: 250px;
-        background-color: #55b4e4;
-        border-radius: 5px;
-        box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
-        text-shadow: 0 1px 1px rgba(0, 0, 0, .3);
-        cursor: pointer;
-        border: 1px solid black;
-        outline: none;
-    }
-    
-    #todo #todo::placeholder {
-        font-family: 'Architects Daughter', cursive;
-        color: rgb(235, 235, 235);
-    }
-    
-    #todo[type=text]:focus {
-        border: 2px solid rgb(174, 221, 251);
-        transition: 0.3s ease;
-    }
-    
-    #btn {
-        border-radius: 5px;
-        background-color: #f3af62;
-        border-style: none;
-        box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
-        text-shadow: 0 1px 1px rgba(0, 0, 0, .3);
-        cursor: pointer;
-        font-family: 'Architects Daughter', cursive;
-    }
-    
-    #btn:active,
-    #btn:hover {
-        background-color: #f3ce54;
-        transition: 0.3s ease-in-out;
-    }
-    /*--------------------------------------------list------------------------------------------------------------*/
-    
-    .element {
-        display: flex;
-        width: 90%;
-        height: auto;
-        align-items: center;
-    }
-    
-    #fa-ul {
-        display: flex;
+
+    /*------------------------todos_container------------------------*/
+
+    .todos_container {
         width: 100%;
         height: auto;
-        flex-flow: column-reverse;
-    }
-    
-    li {
         display: flex;
-        width: 90%;
-        height: 30px;
-        background-color: #dbf0fa;
-        justify-content: space-between;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        margin: 5px 0%;
-        cursor: pointer;
-        border-radius: 5px;
+        flex-direction: column;
         align-items: center;
-        flex-flow: row-reverse;
-        padding: 0% 5%;
-        text-transform: inherit;
     }
-    
-    li:hover {
-        background-color: #cacac8;
+
+    .form_container{
+        width: 100%;
     }
-    
-    li.checked {
-        background: rgb(74, 121, 83);
-        color: #fff;
+
+    .form_container form {
+         width: 100%;
+         display: flex;
+         justify-content: space-evenly;
+         align-items: center;
     }
-    
-    li.checked::before {
-        position: absolute;
-        border-color: #fff;
-        border-style: solid;
-        border-width: 0 2px 2px 0;
-        transform: rotate(45deg);
-        height: 15px;
-        width: 7px;
-    }
-    
-    span {
-        display: flex;
-    }
-    
-    .fa-trash {
-        color: #ff2e4c;
-        padding-right: 10px;
-    }
-    
-    button {
-        margin-right: 5px;
-        background: none;
+
+    .form_container form input{
         border-style: none;
+         border:1px solid var(--lightGray);
+         border-radius: 3px;
+         padding: 2px;
+         transition: 0.5s ease-in-out;
+         outline: none;
+         cursor: pointer;
     }
-    
-    .icons {
-        display: flex;
+
+    .todo-input[type=text]:focus {
+        border: 1px solid var(--secondaryColor);
+        border-radius: 3px;
     }
-    
-    .fa-pencil-square-o {
-        color: rgb(36, 108, 190)
-    }
-    
-    #edit_box {
-        width: 90%;
-        height: 30px;
-        background-color: #3f8fb8;
-        justify-content: space-around;
-        align-items: center;
-        display: flex;
-        border-radius: 5px;
-        margin-bottom: 10px;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        display: none;
-    }
-    
-    #edit {
-        width: 250px;
-        background-color: #87cbec;
-        border-radius: 5px;
-        box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
-        text-shadow: 0 1px 1px rgba(0, 0, 0, .3);
+
+    .select_container select{
+        border: 1px solid var(--lightGray);
+        border-radius: 3px;
+        height: 1.3rem;
         cursor: pointer;
-        border: 1px solid black;
+    }
+
+    .select_container select:focus{
+        border: 1px solid var(--secondaryColor);
+        border-radius: 3px;
         outline: none;
     }
-    
-    #edit[type=text]:focus {
-        border: 2px solid rgb(174, 221, 251);
-        transition: 0.3s ease;
-    }
-    
-    #submit-btn {
-        border-radius: 5px;
-        background-color: #f37f62;
-        border-style: none;
-        box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
-        text-shadow: 0 1px 1px rgba(0, 0, 0, .3);
+
+    .form_container form span {
+        color: var(--parimryColor);
+        font-size: 1.3rem;
         cursor: pointer;
-        font-family: 'Architects Daughter', cursive;
     }
-    
-    #submit-btn:active,
-    #submit-btn:hover {
-        transition: 0.3s ease-in-out;
-        background-color: #f8a18b;
-    }
+
+    /*------------------------todos----------------------------------*/
+
+
+.todos {
+    width: 95%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/*---------------------------todo---------------------------------------*/
+
+.todos li{
+    width: 100%;
+    height: 1.5rem;
+    text-align: start;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 3px;
+    background-color: var(--naturalWhite);
+    border: 1px solid var(--lightGray);
+    cursor: pointer;
+}
+
+.todos li span{
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.fa-trash-can{
+    color: var(--dangerColor)
+}
+
+.fa-pen-to-square {
+    color: var(--infoColor)
+}
