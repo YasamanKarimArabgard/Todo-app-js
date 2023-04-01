@@ -8,7 +8,7 @@ addTodoBtn.addEventListener('click', addTodo);
 filterList.addEventListener('click', filterTodos);
 todoList.addEventListener('click', removeCheck);
 document.addEventListener('DOMContentLoaded', getLocal);
-darkModeBtn.addEventListener('click', changeTheme)
+darkModeBtn.addEventListener('click', changeTheme);
 
 function addTodo(e) {
     e.preventDefault();
@@ -80,6 +80,7 @@ function getLocal() {
     const savedTodos = localStorage.getItem('todos')
         ? JSON.parse(localStorage.getItem('todos'))
         : [];
+
     savedTodos.forEach(todo => {
         const todoDiv = document.createElement('div');
         todoDiv.classList.add('todos');
@@ -94,14 +95,18 @@ function getLocal() {
 }
 
 function removeLocal(todo) {
+
     const savedTodos = localStorage.getItem('todos')
         ? JSON.parse(localStorage.getItem('todos'))
         : [];
 
-    const filteredTodos = savedTodos.filter(t => t !== todo.children[0].innerText);
+    const filteredTodos = savedTodos.filter(t => {
+        t !== todo.children[0].innerText
+    });
+
     localStorage.setItem('todos', JSON.stringify(filteredTodos));
 }
 
-function changeTheme(){
+function changeTheme() {
     document.body.classList.toggle('dark_mode')
 }

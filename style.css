@@ -85,6 +85,8 @@
         font-size: 100%;
         font: inherit;
         vertical-align: baseline;
+        /* font-family: Nunito, sans-serif; */
+        font-family: 'M PLUS Rounded 1c', sans-serif;
     }
     /* HTML5 display-role reset for older browsers */
     
@@ -133,7 +135,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        font-family: 'iranyekan';
         background-color: var(--naturalWhite);
     }
 
@@ -149,14 +150,14 @@
     }
 
     .dark_mode{
-        --bodyColor : #0B2447;
+        --bodyColor : #041C32;
         --primaryColor : #C84B31;
         --secondaryColor : #ECB365;
         --checkColor: #346751;
         --infoColor:#fff;
         --dangerColor:#950101;
         --lightGray :#BBBBBB;
-        --naturalWhite: #144272;
+        --naturalWhite: #182747;
         transition: 0.3s ease-in-out;
     }
     /*-----------------------------------------------main------------------------------------------------------*/
@@ -253,7 +254,7 @@
     }
 
     .select_container{
-        width: 50%;
+        width: 30%;
         justify-content: end;
         align-items: center;
     }
@@ -341,7 +342,7 @@
 
 .completed {
     text-decoration: line-through;
-    opacity: 0.5;
+    opacity: 0.4;
     color: var(--checkColor);
 }
 
@@ -355,13 +356,26 @@ input[type=checkbox]{
 
 label {
 	cursor: pointer;
-	text-indent: -9999px;
 	width: 40px;
 	height: 21px;
 	background: var(--lightGray);
 	display: block;
 	border-radius: 100px;
 	position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size:0.4em;
+}
+
+label #light-mode{
+    margin-left:4px;
+    color: var(--infoColor);
+}
+
+label #dark-mode{
+    margin-right:5px;
+    color: var(--infoColor);
 }
 
 label:after {
