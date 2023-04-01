@@ -13,22 +13,26 @@
     <main>
         <div class="container">
         <h1>TO-DO list</h1>
-          <div class="todo_inputs">
+          <br class="todo_inputs">
             <div class="form_container">
                 <form class="add-element">
                   <input type="text" class="todo-input" placeholder="to do ...">
                    <span class="add-todo"><i class="fa-solid fa-square-plus"></i></span>
                 </form>
             </div>
-            <div class="select_container">
-                    <select class="filter_todos">
-                      <option value="all">All</option>
-                      <option value="completed">completed</option>
-                      <option value="uncompleted">uncompleted</option>
-                    </select>
-            </div> 
-          </div>
-          <ul class="todos_container"></ul>
+            <div class="input_options">
+              <div class="select_container">
+                <select class="filter_todos">
+                  <option value="all">All</option>
+                  <option value="completed">completed</option>
+                  <option value="uncompleted">uncompleted</option>
+                </select>
+               </div> 
+               <input type="checkbox" class='dark_mode' id="dark_mode" />
+               <label for="dark_mode">Toggle</label>
+            </div>
+            <ul class="todos_container"></ul>
+            </div>
         </div>
     </main>
 <script src="./Todo.js"></script>
