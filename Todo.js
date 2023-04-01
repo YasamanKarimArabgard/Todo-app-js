@@ -2,11 +2,13 @@ const todoInput = document.querySelector('.todo-input')
 const addTodoBtn = document.querySelector('.add-todo');
 const todoList = document.querySelector('.todos_container');
 const filterList = document.querySelector('.filter_todos');
+const darkModeBtn = document.querySelector('#dark_mode')
 
 addTodoBtn.addEventListener('click', addTodo);
 filterList.addEventListener('click', filterTodos);
 todoList.addEventListener('click', removeCheck);
-document.addEventListener('DOMContentLoaded', getLocal)
+document.addEventListener('DOMContentLoaded', getLocal);
+darkModeBtn.addEventListener('click', changeTheme)
 
 function addTodo(e) {
     e.preventDefault();
@@ -98,4 +100,8 @@ function removeLocal(todo) {
 
     const filteredTodos = savedTodos.filter(t => t !== todo.children[0].innerText);
     localStorage.setItem('todos', JSON.stringify(filteredTodos));
+}
+
+function changeTheme(){
+    document.body.classList.toggle('dark_mode')
 }
